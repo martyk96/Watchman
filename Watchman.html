@@ -35,32 +35,15 @@
 		</style>
 	</head>
 	<body>
-		<!--
-		<div class="primary">
-			Alpha
-			<p>
-			<button>Promote</button>
-		</div>
-		<div class="secondary">
-			Bravo
-			<p>
-			<button>Promote</button>
-		</div>
-		<div class="secondary">
-			Charlie
-			<p>
-			<button>Promote</button>
-		</div>
-	-->
+
 	</body>
 	<script>
 	// Creates all the server objects to be passed into the array
-//var body = document.getElementsByTagName('body')
 	var servers=[
-		alpha={name:"Alpha",position:"primary",status:"up"},
-		bravo={name:"Bravo",position:"secondary", status:"up"},
-		charlie={name:"Charlie",position:"secondary", status:"up"},
-		delta={name:"Delta", position:"secondary",status:"down"}
+		{name:"Alpha",position:"primary",status:"up"},
+		{name:"Bravo",position:"secondary", status:"up"},
+		{name:"Charlie",position:"secondary", status:"up"},
+		{name:"Delta", position:"secondary",status:"down"}
 	]
 
 	for(x=0; x<servers.length; x++)
