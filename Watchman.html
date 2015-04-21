@@ -55,13 +55,13 @@
 	</body>
 	<script>
 	// Creates all the server objects to be passed into the array
-	var body = document.getElementsByTagName('body');
-	var alpha={name:"Alpha",position:"primary",status:"up"};
-	var bravo={name:"Bravo",position:"secondary", status:"up"};
-	var charlie={name:"Charlie",position:"secondary", status:"up"};
-	var delta={name:"Delta", position:"secondary",status:"down"}
-
-	var servers=[alpha,bravo,charlie,delta];
+//var body = document.getElementsByTagName('body')
+	var servers=[
+		alpha={name:"Alpha",position:"primary",status:"up"},
+		bravo={name:"Bravo",position:"secondary", status:"up"},
+		charlie={name:"Charlie",position:"secondary", status:"up"},
+		delta={name:"Delta", position:"secondary",status:"down"}
+	]
 
 	for(x=0; x<servers.length; x++)
 	{
