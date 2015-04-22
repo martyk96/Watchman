@@ -1,11 +1,14 @@
-function serverPage() {};
-  serverPage.prototype.createDiv = function(servers) {
-    for(x=0; x<servers.length; x++)
-    {
+function Server(server) {
+  this.position = server.position;
+  this.name = server.name;
+  this.status = server.status;
+};
+  Server.prototype.createDiv = function() {
       var serverDiv = document.createElement('div');
-      serverDiv.className=servers[x].position; //class name is based on position of server
-      serverDiv.id = servers[x].status;
-      var serverName = document.createTextNode(servers[x].name); //text is the name of the server
+      serverDiv.className = this.position; //class name is based on position of server
+      serverDiv.id = this.status;
+
+      var serverName = document.createTextNode(this.name); //text is the name of the server
       serverDiv.appendChild(serverName); //appends the name to the div
 
       var p = document.createElement('p'); //creates a new paragraph
@@ -16,7 +19,5 @@ function serverPage() {};
       p.appendChild(promoteButton); //appends button to new paragraph
       serverDiv.appendChild(p); //appends paragraph to div
 
-      document.body.appendChild(serverDiv);
+      return serverDiv;
     }
-
-  }

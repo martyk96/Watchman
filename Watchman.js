@@ -6,6 +6,10 @@ var servers=[
   {name:"Delta", position:"secondary",status:"down"}
 ]
 
-var page = new serverPage();
+var div;
 
-page.createDiv(servers);
+for(x=0; x<servers.length; x++)
+{
+  div = new Server(servers[x])
+  document.body.appendChild(div.createDiv());
+}
