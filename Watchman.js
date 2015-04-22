@@ -10,6 +10,6 @@ var div;
 
 for(x=0; x<servers.length; x++)
 {
-  div = new Server(servers[x])
+  div = new serverView(servers[x])
   document.body.appendChild(div.createDiv());
 }

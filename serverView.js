@@ -1,9 +1,9 @@
-function Server(server) {
+function serverView(server) {
   this.position = server.position;
   this.name = server.name;
   this.status = server.status;
 };
-  Server.prototype.createDiv = function() {
+  serverView.prototype.createDiv = function() {
       var serverDiv = document.createElement('div');
       serverDiv.className = this.position; //class name is based on position of server
       serverDiv.id = this.status;
