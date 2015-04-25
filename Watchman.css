@@ -22,7 +22,7 @@ div[class="primary"] {
 div[class="secondary"]{
   background-color: rgb(157, 221, 126);
 }
-div[id="down"]{
+div[status="down"]{
   background-color: rgb(255, 0, 0);
 }
 button{

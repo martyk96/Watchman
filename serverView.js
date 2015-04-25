@@ -1,15 +1,12 @@
 function serverView(server) {
-  this.position = server.position;
-  this.name = server.name;
-  this.status = server.status;
+  this.server = server;
 };
   serverView.prototype.createDiv = function() {
-      var serverDiv = document.createElement('div');
-      serverDiv.className = this.position; //class name is based on position of server
-      serverDiv.id = this.status;
+      this.serverDiv = document.createElement('div');
+      this.serverDiv.className = this.server.position; //class name is based on position of server
+      this.serverDiv.setAttribute('status', this.server.status);
 
-      var serverName = document.createTextNode(this.name); //text is the name of the server
-      serverDiv.appendChild(serverName); //appends the name to the div
+      this.serverDiv.textContent = this.server.name; //appends the name to the div
 
       var p = document.createElement('p'); //creates a new paragraph
 
@@ -17,7 +14,14 @@ function serverView(server) {
       var buttonText = document.createTextNode("Promote");
       promoteButton.appendChild(buttonText); //appends text to button
       p.appendChild(promoteButton); //appends button to new paragraph
-      serverDiv.appendChild(p); //appends paragraph to div
+      this.serverDiv.appendChild(p); //appends paragraph to div
 
-      return serverDiv;
+      return this.serverDiv;
     }
+
+  serverView.prototype.update = function(server){
+      this.server = server;
+      this.serverDiv.className = this.server.position; //class name is based on position of server
+      this.serverDiv.setAttribute('status', this.server.status);
+
+  }
