@@ -1,15 +1,14 @@
-// Creates all the server objects to be passed into the array
-var servers=[
-  {name:"Alpha",position:"primary",status:"up"},
-  {name:"Bravo",position:"secondary", status:"up"},
-  {name:"Charlie",position:"secondary", status:"up"},
-  {name:"Delta", position:"secondary",status:"down"}
-]
+var view, servers;
 
-var div;
+servers_request = new XMLHttpRequest()
+servers_request.addEventListener('load', function(){
+  servers = JSON.parse(servers_request.responseText);
 
-for(x=0; x<servers.length; x++)
-{
-  div = new serverView(servers[x])
-  document.body.appendChild(div.createDiv());
-}
+  servers.forEach(function(server){
+    view = new serverView(server)
+    document.body.appendChild(view.createDiv());
+  })
+})
+
+servers_request.open("GET", "http://localhost:1337/")
+servers_request.send()
